@@ -103,8 +103,3 @@ function draw() {
 
   }
 }
-function mouseClicked(){
-  if (currentButton == 1){
-    scene = 2;
-  }
-}
