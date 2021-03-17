@@ -4,7 +4,7 @@ let pImg;
 let bag = [];
 let score = 0;
 let scene;
-let currentButton;
+let currentButton = 0;
 
 
 
@@ -67,7 +67,6 @@ function keyPressed() {
 
 function draw() {
   if (scene == 1) {
-
     background(bckgrnd2);
 
   }
@@ -103,5 +102,9 @@ function draw() {
 
 
   }
-
+}
+function mouseClicked(){
+  if (currentButton == 1){
+    scene = 2;
+  }
 }
