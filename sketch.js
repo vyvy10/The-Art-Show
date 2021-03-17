@@ -48,7 +48,6 @@ var theButton2 = function() {
   text("How to play?", 70, 185);
 }
 var theButton3 = function() {
-  currentButton = 3;
   fill(164, 165, 237);
   rect(240, 150, 100, 60, 20);
   textFont('Georgia');
@@ -75,6 +74,9 @@ function draw() {
   theButton();
   theButton2();
   theButton3();
+  if (mouseIsPressed) {
+    scene = 2
+  }
   if (scene == 2) {
     if (random(1) < 0.01) {
       bag.push(new Bag());
@@ -101,9 +103,5 @@ function draw() {
 
 
   }
-  mouseClicked = function (){
-    if (currentButton == 1){
-      scene = 2;
-    }
-  }
+
 }
