@@ -73,7 +73,7 @@ function draw() {
   theButton();
   theButton2();
   theButton3();
-  if (mouseIsPressed) {
+  if (keyIsPressed) {
     scene = 2
   }
   if (scene == 2) {
