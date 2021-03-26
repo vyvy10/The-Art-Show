@@ -19,7 +19,6 @@ function setup() {
   whale = new Whale();
   bckgrnd = loadImage("ocean(1).jpg");
   bckgrnd2 = loadImage("ocean2.jpeg");
-  bckgrnd3 = loadImage("ocean3.jpg");
   scene = 1;
   
 
