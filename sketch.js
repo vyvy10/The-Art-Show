@@ -106,14 +106,6 @@ function draw() {
       b.move();
       b.show();
 
-      if (scene == 3) {
-        background(0, 0, 0);
-        text("GAME OVER", 200, 200);
-      }
-      if (whale.hits(b)) {
-       scene = 3;
-      }
-
     }
 
     for (let c of coin) {
