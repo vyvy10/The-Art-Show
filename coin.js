@@ -5,9 +5,9 @@ class Coin{
     this.y = height - this.r;
   }
   move(){
-    this.x -= 4;
+    this.x -= 5;
   }
   show(){
-    image(cImg, this.x, this.y - 80, this.r - 50, this.r - 50);
+    image(cImg, this.x, this.y - 90, this.r - 50, this.r - 50);
   }
 }
