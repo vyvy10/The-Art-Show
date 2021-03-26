@@ -1,29 +1,27 @@
 let whale;
 let wImg;
 let pImg;
+let cImg;
 let bag = [];
-
-let score = 0;
-let scene;
 let coin = [];
-
-
-
-
-
+let scene;
+//let score = 0;
 
 function preload() {
-  wImg = loadImage("whale.jpg");
+  wImg = loadImage("whale.png");
   pImg = loadImage("plasticbag.png");
   cImg = loadImage("coin.jpeg");
+  
 }
 
 function setup() {
   createCanvas(400, 400);
   whale = new Whale();
-  bckgrnd = loadImage("ocean.jpeg");
+  bckgrnd = loadImage("ocean(1).jpg");
   bckgrnd2 = loadImage("ocean2.jpeg");
+  bckgrnd3 = loadImage("ocean3.jpg");
   scene = 1;
+  
 
 
 }
@@ -31,13 +29,13 @@ function setup() {
 var theButton = function() {
 
   noStroke();
-  fill(90, 224, 173);
-  rect(130, 220, 165, 70, 20);
+  fill(100, 224, 173);
+  rect(120, 220, 165, 70, 20);
   textStyle(BOLD);
-  textFont('Georgia');
+  textFont('serif');
   fill(0, 0, 0);
-  textSize(15);
-  text("Click here to start!", 140, 260);
+  textSize(17);
+  text("Click here to start!", 135, 260);
 }
 
 //var theButton2 = function() {
@@ -72,6 +70,12 @@ function keyPressed() {
 function draw() {
   if (scene == 1) {
     background(bckgrnd2);
+    fill(9, 12, 102);
+    textFont("Georgia");
+    textStyle(BOLD);
+    textSize(18);
+    text("WELCOME TO THE MARINE MISSION!", 10, 60);
+    text("Let's try to protect our whale!", 70, 100);
 
   }
   theButton();
@@ -87,30 +91,43 @@ function draw() {
       bag.push(new Bag());
     }
 
-    if (random(1) < 0.005) {
+    if (random(1) < 0.006) {
       coin.push(new Coin());
     }
     background(bckgrnd);
-    fill(0, 0, 0);
-    stroke(225);
-    textSize(23);
-    textFont('serif');
-    text("Total Score:" + score, 30, 60)
+    //fill(0, 0, 0);
+    // stroke(225);
+    //textSize(23);
+    // textFont('serif');
+    //text("Total Score:" + score, 30, 60)
 
 
     for (let b of bag) {
       b.move();
       b.show();
 
+      if (scene == 3) {
+        background(0, 0, 0);
+        text("GAME OVER", 200, 200);
+      }
+      if (whale.hits(b)) {
+       scene = 3;
+      }
 
     }
+
     for (let c of coin) {
       c.show();
       c.move();
+      whale.hits(c);
+
+
     }
 
     whale.show();
     whale.move();
+
+
 
 
 
